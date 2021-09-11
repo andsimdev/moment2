@@ -35,7 +35,8 @@ function copyCSS() {
     return src(files.cssPath)
     .pipe(concat('main.css'))
     .pipe(cssnano())
-    .pipe(dest('pub/css'));
+    .pipe(dest('pub/css'))
+    .pipe(browserSync.stream());
 }
 
 // Task för att kopiera alla JavaScript-filer till pub-mappen, samt slå ihop JS-filerna till en och minifiera den
