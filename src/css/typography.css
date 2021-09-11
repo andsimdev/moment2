@@ -6,6 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Huvudrubriken */
 #heroh1 {
     text-align: center;
     color: white;
@@ -14,6 +15,7 @@
     font-weight: 400;
 }
 
+/* Inforutans text */
 #infodiv p {
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);

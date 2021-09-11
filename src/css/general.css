@@ -1,7 +1,9 @@
+/* Allmän animering */
 * {
     transition: 0.5s;
 }
 
+/* Layout-inställningar för sidan */
 body {
     display: flex;
     flex-direction: column;
@@ -10,12 +12,14 @@ body {
     padding: 3%;
 }
 
+/* Positionera sidhuvudet */
 header {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
+/* Positionera huvudsektionen */
 section {
     display: flex;
     flex-direction: column;
@@ -25,6 +29,7 @@ section {
     height: 200px;
 }
 
+/* Menyn med knappar i huvudsektionen */
 nav {
     display: flex;
     flex-direction: row;

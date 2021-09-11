@@ -1,3 +1,4 @@
+/* Generell design för knappar och länkar */
 button, a {
     display: flex;
     align-items: center;
@@ -11,11 +12,13 @@ button, a {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
 }
 
+/* Hover-effekt för knappar och länkar */
 button:hover, a:hover {
     cursor: pointer;
     transform: scale(1.025);
 }
 
+/* Design för länkar */
 a {
     margin: 0;
     background: #6D6D6D;
@@ -26,6 +29,7 @@ a img {
     margin-right: 15px;
 }
 
+/* Färger för de olika knapparna */
 .btn1 {
     background: #4B74FF;
 }
