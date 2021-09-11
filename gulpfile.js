@@ -4,6 +4,12 @@ const {src, dest, parallel, series, watch} = require('gulp');
 // Hämta in paketet Gulp-concat (för att slå ihop filer)
 const concat = require('gulp-concat');
 
+// Hämta in paketet Gulp-terser (för att minifiera JS-filer)
+const terser = require('gulp-terser');
+
+// Hämta in paketet Gulp-cssnano (för att minifiera CSS-filer)
+const cssnano = require('gulp-cssnano');
+
 // Definiera sökvägar för HTML-filer, CSS-filer, JavaScript-filer och bilder
 const files = {
     htmlPath: "src/**/*.html",
@@ -18,17 +24,19 @@ function copyHTML() {
     .pipe(dest('pub'));
 }
 
-// Task för att kopiera alla CSS-filer till pub-mappen, samt slå ihop CSS-filerna
+// Task för att kopiera alla CSS-filer till pub-mappen, samt slå ihop CSS-filerna till en och minifiera den
 function copyCSS() {
     return src(files.cssPath)
     .pipe(concat('main.css'))
+    .pipe(cssnano())
     .pipe(dest('pub/css'));
 }
 
-// Task för att kopiera alla JavaScript-filer till pub-mappen
+// Task för att kopiera alla JavaScript-filer till pub-mappen, samt slå ihop JS-filerna till en och minifiera den
 function copyJS() {
     return src(files.jsPath)
     .pipe(concat('main.js'))
+    .pipe(terser())
     .pipe(dest('pub/js'));
 }
 
