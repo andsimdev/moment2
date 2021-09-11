@@ -1,22 +1,28 @@
-button {
+button, a {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 50px;
     border-style: none;
-    padding: 10px 30px;
-    font-size: 1.1rem;
+    padding: 8px 25px;
+    font-size: 0.9rem;
     white-space: nowrap;
     margin: 2%;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
 }
 
-button:hover {
+button:hover, a:hover {
     cursor: pointer;
     transform: scale(1.025);
 }
 
-button img {
+a {
+    margin: 0;
+    background: #6D6D6D;
+    color: white;
+}
+
+a img {
     margin-right: 15px;
 }
 
@@ -34,10 +40,4 @@ button img {
 
 .btn4 {
     background: #FF4B4B;
-}
-
-.btn5 {
-    margin: 0;
-    background: #6D6D6D;
-    color: white;
 }

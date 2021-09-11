@@ -13,24 +13,24 @@
 <body>
     <header>
         <div id="infodiv">
-            <p>DT173G, Webbutveckling III</p>
-            <p>Av Simon Andersson</p>
+            <p class="infotext">DT173G, Webbutveckling III</p>
+            <p class="infotext">Av Simon Andersson</p>
         </div>
 
-        <button class="btn5">
-            <img src="images/github.svg" alt="" width="25">
+        <a href="https://github.com/andsimdev/moment2" target="_blank">
+            <img src="images/github.svg" alt="" width="20">
             Visa repository på Github
-        </button>
+        </a>
     </header>
 
     <section>
         <h1 id="heroh1">Moment 2</h1>
 
         <nav>
-            <button class="btn1">Fjällandskap</button>
-            <button class="btn2">Gröna ytor</button>
-            <button class="btn3">Dimma</button>
-            <button class="btn4">Solnedgång</button>
+            <button class="btn1" onclick="mountains()">Fjällen</button>
+            <button class="btn2" onclick="grass()">Grönska</button>
+            <button class="btn3" onclick="fog()">Dimma</button>
+            <button class="btn4" onclick="ocean()">Havet</button>
         </nav>
     </section>
 
