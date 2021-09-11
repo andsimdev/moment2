@@ -10,7 +10,11 @@ const terser = require('gulp-terser');
 // Hämta in paketet Gulp-cssnano (för att minifiera CSS-filer)
 const cssnano = require('gulp-cssnano');
 
+// Hämta in paketet Imagemin (för att komprimera bildfiler)
 const imagemin = require('gulp-imagemin');
+
+// Hämta in paketet BrowserSync för att kunna förhandsvisa i webbläsaren
+const browserSync = require('browser-sync').create();
 
 // Definiera sökvägar för HTML-filer, CSS-filer, JavaScript-filer och bilder
 const files = {
@@ -51,7 +55,14 @@ function copyImages() {
 
 // Task för att lyssna efter förändringar i källkodsfiler
 function watchTask() {
-    watch([files.htmlPath, files.cssPath, files.jsPath, files.imagePath], parallel(copyHTML, copyCSS, copyJS, copyImages));
+
+    // Initiera BrowserSync
+    browserSync.init({
+        server: "./pub"
+    });
+
+    // Lyssna efter förändringar i källkodsfiler, i så fall kör "publiceringsfunktioner" samt ladda om BrowserSync
+    watch([files.htmlPath, files.cssPath, files.jsPath, files.imagePath], parallel(copyHTML, copyCSS, copyJS, copyImages)).on('change', browserSync.reload);
 }
 
 // Exportera funktionen för att kopiera HTML-filer till Gulp-default
