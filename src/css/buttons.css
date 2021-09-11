@@ -1,0 +1,43 @@
+button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    border-style: none;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    margin: 2%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.219);
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+}
+
+button img {
+    margin-right: 15px;
+}
+
+.btn1 {
+    background: #4B74FF;
+}
+
+.btn2 {
+    background: #4BFF70;
+}
+
+.btn3 {
+    background: #FFF34B;
+}
+
+.btn4 {
+    background: #FF4B4B;
+}
+
+.btn5 {
+    margin: 0;
+    background: #6D6D6D;
+    color: white;
+}
