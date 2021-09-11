@@ -16,6 +16,9 @@ const imagemin = require('gulp-imagemin');
 // Hämta in paketet BrowserSync för att kunna förhandsvisa i webbläsaren
 const browserSync = require('browser-sync').create();
 
+// Hämta in paketet Sourcemaps (för att kartlägga ursprungliga källkodsfiler)
+const sourcemaps = require('gulp-sourcemaps');
+
 // Definiera sökvägar för HTML-filer, CSS-filer, JavaScript-filer och bilder
 const files = {
     // HTML
@@ -45,11 +48,17 @@ function copyCSS() {
     // Hämta sökvägen för CSS-källkodsfiler
     return src(files.cssPath)
 
+    // Initiera Sourcemaps
+    .pipe(sourcemaps.init())
+
     // Slå ihop flera CSS-filer till en med namnet main.css
     .pipe(concat('main.css'))
 
     // Minifiera css-filen
     .pipe(cssnano())
+
+    // Skriv sourcemaps till katalogen "maps"
+    .pipe(sourcemaps.write('../maps'))
 
     // Placera CSS-filen i pub-katalogen
     .pipe(dest('pub/css'))
@@ -63,11 +72,17 @@ function copyJS() {
     // Hämta sökvägen för JavaScript-källkodsfiler
     return src(files.jsPath)
 
+    // Initiera Sourcemaps
+    .pipe(sourcemaps.init())
+
     // Slå ihop flera JavaScript-filer till en med namnet main.js
     .pipe(concat('main.js'))
 
     // Minifiera JavaScript-filen
     .pipe(terser())
+
+    // Skriv sourcemaps till katalogen "maps"
+    .pipe(sourcemaps.write('../maps'))
 
     // Placera JavaScript-filen i pub-katalogen
     .pipe(dest('pub/js'));
