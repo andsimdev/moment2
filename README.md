@@ -16,7 +16,7 @@ Utvecklingsmiljön använder automatisering med hjälp av NodeJS, Gulp och flert
 
 Därefter öppnas en projektkatalog på datorn, och här initieras sedan ett nytt npm-projekt med hjälp av terminalen genom att skriva `npm init -y` (snabbinitiering utan manuell inmatning av inställningar)
 
-Nu ska Gulp installeras lokalt att använda endast under utvecklingen genom att i terminalen i projektkatalogen skriva `npm install gulp --save-dev`
+Nu ska Gulp installeras lokalt att använda under utvecklingen genom att i terminalen i projektkatalogen skriva `npm install gulp --save-dev`
 
 Filen "gulpfile.js" behöver finnas med i projektets rotkatalog för att automatiseringen ska fungera. Om versionshantering med ex. Git används rekommenderas att mappen "node_modules" ignoreras av versionshanteraren då denna innehåller många filer.
 
@@ -27,6 +27,5 @@ För att köra automatiseringen skrivs `gulp` i terminalen i projektkatalogen. A
 ## Automatiseringen kommer att:
 * Flytta alla HTML-filer från projektets rotkatalog till pub-katalogen.
 * Slå ihop och minifiera alla CSS- respektive JavaScript-filer och döpa dessa till main.css respektive main.js (Spårning av källkodsfiler vid inspektion är fortfarande möjlig).
-* Komprimera bilder som placeras i katalogen images och flytta dessa till images-katalogen i pub-katalogen.
+* Komprimera bilder som finns i katalogen images och flytta dessa till images-katalogen i pub-katalogen.
 * Öppna ett webbläsarfönster och visa filerna i pub-katalogen, samt automatiskt uppdatera webbläsarfönstret vid uppdatering av någon källkodsfil.
-
