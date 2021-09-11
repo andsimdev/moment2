@@ -10,6 +10,8 @@ const terser = require('gulp-terser');
 // Hämta in paketet Gulp-cssnano (för att minifiera CSS-filer)
 const cssnano = require('gulp-cssnano');
 
+const imagemin = require('gulp-imagemin');
+
 // Definiera sökvägar för HTML-filer, CSS-filer, JavaScript-filer och bilder
 const files = {
     htmlPath: "src/**/*.html",
@@ -43,6 +45,7 @@ function copyJS() {
 // Task för att kopiera alla bilder till pub-mappen
 function copyImages() {
     return src(files.imagePath)
+    .pipe(imagemin())
     .pipe(dest('pub/images'));
 }
 
