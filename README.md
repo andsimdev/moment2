@@ -11,6 +11,8 @@ Syftet med att skapa en automatiserad utvecklingsmiljö är att göra det enklar
 * __BrowserSync__, används för att testköra publiceringskatalogen i webbläsaren
 * __Gulp-sourcemaps__, används för att kunna spåra i vilka CSS- eller JavaScriptkällkodsfiler en viss regel finns
 
+*Ovanstående paket har valts dels därför att de förevisats som exempel under utbildningen men också för att de flesta har många nedladdningar regelbundet vilket tyder på pålitlig funktionalitet*
+
 ## Beskrivning/instruktion
 Utvecklingsmiljön använder automatisering med hjälp av NodeJS, Gulp och flertalet npm-paket. För att initiera utvecklingsmiljön krävs att NodeJS och npm finns installerat på datorn. Sedan installeras först Gulp globalt på datorn för att kunna användas överallt på datorn genom terminalen. Detta görs genom att öppna ett terminalfönster och skriva `npm install gulp-cli -g`
 
@@ -22,7 +24,7 @@ Filen "gulpfile.js" behöver finnas med i projektets rotkatalog för att automat
 
 Genom att följa filstrukturen i detta repositoryt vid skapande av projektet så tillämpas automatiseringen och dess funktionalitet på projektet. Grunden är att alla källkodsfiler skapas i src-katalogen och de kommer sedan flyttas till pub-katalogen, vilka då blir de filer som är redo att publiceras publikt.
 
-För att köra automatiseringen skrivs `gulp` i terminalen i projektkatalogen. Automatiseringen körs nu och fortsätter lyssna efter förändringar i källkodsfilerna, och kör sedan automatiskt igen om någon av dessa uppdateras. För att avsluta automatiseringen tryck `ctrl+c` i terminalen. 
+För att köra automatiseringen skrivs `gulp` i terminalen i projektkatalogen. Automatiseringen körs nu och fortsätter lyssna efter förändringar i källkodsfilerna, och kör sedan automatiskt igen om någon av dessa uppdateras. För att avsluta automatiseringen tryck `ctrl+c` i terminalen.
 
 ## Automatiseringen kommer att:
 * Flytta alla HTML-filer från projektets rotkatalog till pub-katalogen.
